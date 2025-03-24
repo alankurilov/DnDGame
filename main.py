@@ -7,6 +7,9 @@ from classes.Fighter import Fighter
 from classes.Monk import Monk
 from classes.Ranger import Ranger
 from classes.Warlock import Warlock
+from races.Human import Human
+from races.Race import Race
+from hero.Hero import Hero
 
 
 # A = Class(12, 21, 21, 12, 21, 21)
@@ -16,42 +19,9 @@ print("Barbarian")
 print(Bar.savingThrow1())
 print(Bar.savingThrow2())
 
-print("Rogue")
-Rogue = Rogue()
-print(Rogue.savingThrow1())
-print(Rogue.savingThrow2())
+Hu = Human()
+print("Human")
+print(Hu.__str__())
 
-print("Sorcerer")
-Sorcerer = Sorcerer()
-print(Sorcerer.savingThrow1())
-print(Sorcerer.savingThrow2())
-
-print("Bard")
-bard = Bard()
-print(bard.savingThrow1())
-print(bard.savingThrow2())
-
-print("Cleric")
-Cleric = Cleric()
-print(Cleric.savingThrow1())
-print(Cleric.savingThrow2())
-
-print("Fighter")
-Fighter = Fighter()
-print(Fighter.savingThrow1())
-print(Fighter.savingThrow2())
-
-print("Monk")
-Monk = Monk()
-print(Monk.savingThrow1())
-print(Monk.savingThrow2())
-
-print("Ranger")
-Ranger = Ranger()
-print(Ranger.savingThrow1())
-print(Ranger.savingThrow2())
-
-print("Warlock")
-Warlock = Warlock()
-print(Warlock.savingThrow1())
-print(Warlock.savingThrow2())
+H = Hero(Bar, Hu)
+print(H.class_.savingThrow1())

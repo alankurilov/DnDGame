@@ -1,8 +1,7 @@
-from abc import ABC, abstractmethod
-from typing_extensions import override
+from abc import ABC
 
 
-class Class(ABC):
+class Race(ABC):
     def __init__(
         self,
         strength: int,
@@ -11,6 +10,7 @@ class Class(ABC):
         intelligence: int,
         wisdom: int,
         charisma: int,
+        speed: int,
     ):
         self.strength: int = strength
         self.dexterity: int = dexterity
@@ -18,15 +18,11 @@ class Class(ABC):
         self.intelligence: int = intelligence
         self.wisdom: int = wisdom
         self.charisma: int = charisma
+        self.speed: int = speed
 
-    @override
-    def __str__(self):
-        return f"{self.strength} {self.dexterity} {self.physique} {self.intelligence} {self.wisdom} {self.charisma}"
 
+"""
     @abstractmethod
-    def savingThrow1(self) -> str:
-        pass
-
-    @abstractmethod
-    def savingThrow2(self) -> str:
-        pass
+    def charUpdate(self):
+        pass  # Or add the actual implementation in subclasses
+"""
