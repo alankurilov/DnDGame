@@ -7,10 +7,10 @@ class Bard(Class):
         super().__init__(8, 12, 14, 10, 10, 16)
 
     def bardicInspiration(self):
-        pass
+        return "bardicInspiration"
 
     def spellcasting(self):
-        pass
+        return "spellcasting"
 
     @override
     def savingThrow1(self):

@@ -1,4 +1,8 @@
-from abc import ABC
+from abc import ABC, abstractmethod
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from visitor import RaceVisitor
 
 
 class Race(ABC):
@@ -20,9 +24,6 @@ class Race(ABC):
         self.charisma: int = charisma
         self.speed: int = speed
 
-
-"""
     @abstractmethod
-    def charUpdate(self):
-        pass  # Or add the actual implementation in subclasses
-"""
+    def accept(self, visitor: "RaceVisitor", action: str):
+        pass

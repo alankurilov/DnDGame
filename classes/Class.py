@@ -1,6 +1,9 @@
 from abc import ABC, abstractmethod
+from typing import TYPE_CHECKING
 from typing_extensions import override
 
+if TYPE_CHECKING:
+    from visitor import ClassVisitor
 
 class Class(ABC):
     def __init__(
@@ -29,4 +32,8 @@ class Class(ABC):
 
     @abstractmethod
     def savingThrow2(self) -> str:
+        pass
+
+    @abstractmethod
+    def accept(self, visitor: "ClassVisitor", action: str):
         pass
