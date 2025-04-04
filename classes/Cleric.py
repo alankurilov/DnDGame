@@ -1,5 +1,8 @@
-from typing import override
+from typing import TYPE_CHECKING, override
 from .Class import Class
+
+if TYPE_CHECKING:
+    from visitor import ClassVisitor
 
 
 class Cleric(Class):
@@ -14,8 +17,12 @@ class Cleric(Class):
     def savingThrow2(self):
         return "charisma"
 
+    @override
+    def accept(self, visitor: "ClassVisitor", action: str):
+        return visitor.visitCleric(self, action)
+
     def spellcasting(self):
-        pass
+        return "spellcasting"
 
     def divineDomain(self):
-        pass
+        return "divineDomain"

@@ -1,5 +1,9 @@
-from typing import override
+from typing import TYPE_CHECKING, override
+
 from .Class import Class
+
+if TYPE_CHECKING:
+    from visitor import ClassVisitor
 
 
 class Ranger(Class):
@@ -7,10 +11,14 @@ class Ranger(Class):
         super().__init__(10, 16, 14, 8, 14, 10)
 
     def favoredEnemy(self):
-        pass
+        return "favoredEnemy"
 
     def naturalExplorer(self):
-        pass
+        return "naturalExplorer"
+
+    @override
+    def accept(self, visitor: "ClassVisitor", action: str):
+        return visitor.visitRanger(self, action)
 
     @override
     def savingThrow1(self):

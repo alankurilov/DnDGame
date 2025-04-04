@@ -1,5 +1,9 @@
-from typing import override
+from typing import TYPE_CHECKING, override
+
 from .Class import Class
+
+if TYPE_CHECKING:
+    from visitor.ClassVisitor import ClassVisitor
 
 
 class Bard(Class):
@@ -11,6 +15,10 @@ class Bard(Class):
 
     def spellcasting(self):
         return "spellcasting"
+
+    @override
+    def accept(self, visitor: "ClassVisitor", action: str):
+        return visitor.visitBard(self, action)
 
     @override
     def savingThrow1(self):

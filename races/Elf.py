@@ -1,5 +1,5 @@
 from .Race import Race
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, override
 
 if TYPE_CHECKING:
     from visitor import RaceVisitor
@@ -12,6 +12,7 @@ class Elf(Race):
     def darkVision(self):
         return "Im using darkVision"
 
+    @override
     def accept(self, visitor: "RaceVisitor", action: str):
         return visitor.visitElf(self, action)
 

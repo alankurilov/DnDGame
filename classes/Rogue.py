@@ -1,5 +1,9 @@
-from typing import override
+from typing import TYPE_CHECKING, override
+
 from .Class import Class
+
+if TYPE_CHECKING:
+    from visitor import ClassVisitor
 
 
 class Rogue(Class):
@@ -7,10 +11,14 @@ class Rogue(Class):
         super().__init__(8, 16, 14, 10, 12, 10)
 
     def sneakAttac(self):
-        pass
+        return "sneakAttac"
 
     def cunningAction(self):
-        pass
+        return "cunningAction"
+
+    @override
+    def accept(self, visitor: "ClassVisitor", action: str):
+        return visitor.visitRogue(self, action)
 
     @override
     def savingThrow1(self):
