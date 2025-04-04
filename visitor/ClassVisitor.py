@@ -86,3 +86,25 @@ class ClassVisitor:
         elif action == "savingThrow2":
             return rogue.savingThrow2()
         raise ValueError("unknown action")
+
+    def visitSorcerer(self, sorcerer: Sorcerer, action: str):
+        if action == "sorcerousOrigin":
+            return sorcerer.sorcerousOrigin()
+        elif action == "sorceryPoints":
+            return sorcerer.sorceryPoints()
+        elif action == "savingThrow1":
+            return sorcerer.savingThrow1()
+        elif action == "savingThrow2":
+            return sorcerer.savingThrow2()
+        raise ValueError("unknown action")
+
+    def visitWarlock(self, warlock: Warlock, action: str):
+        if action == "otherwordlyPatron":
+            return warlock.otherwordlyPatron()
+        elif action == "spellcasting":
+            return warlock.spellcasting()
+        elif action == "savingThrow1":
+            return warlock.savingThrow1()
+        elif action == "savingThrow2":
+            return warlock.savingThrow2()
+        raise ValueError("unknown action")
