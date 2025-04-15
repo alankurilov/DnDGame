@@ -4,6 +4,9 @@ from races.Elf import Elf
 from creeps.Creep import Creep
 from visitor.ClassVisitor import ClassVisitor
 from visitor.RaceVisitor import RaceVisitor
+from dice.Dice import Dice
+
+print(round(((4 - 10 - 0.5) / 2)))
 
 Warlock = Warlock()
 print("Warlock")
@@ -17,12 +20,10 @@ print(Elf.__str__())
 
 H = Hero(Warlock, Elf)
 
-Creep = Creep(32)
+Creep = Creep(32, 8)
 
 RV = RaceVisitor()
 CV = ClassVisitor()
+H.acttack(Creep)
+
 # print(Elf.accept(RV, "sneakAttac"))  # RaceVisitor
-print(H.class_.accept(CV, "otherwordlyPatron"))
-print(H.class_.accept(CV, "spellcasting"))
-print(H.class_.accept(CV, "savingThrow1"))
-print(H.class_.accept(CV, "savingThrow2"))
